@@ -340,12 +340,13 @@ const Navbar: React.FC = () => {
                         </a>
 
                         <div className={`invisible opacity-0 absolute top-[40px] ${
-                            key === 'products'
-                              ? 'left-[-224px] min-w-0 max-w-[1200px] w-[calc(100vw-55px)]'
-                              : key === 'resources'
-                                ? 'transform -translate-x-1/2 left-1/2 min-w-[500px]'
-                                : 'transform -translate-x-1/2 left-1/2 min-w-0 w-max'
-                          } bg-white dark:bg-[#0D0D0D] border border-[#e8e8e8] dark:border-[#292929] shadow-[0px_10px_20px_rgba(0,0,0,0.05)] rounded-[16px] p-8 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-hover:mt-0`}>
+                          key === 'products'
+                            ? 'left-[-224px] min-w-0 max-w-[1200px] w-[calc(100vw-55px)]'
+                            : key === 'resources'
+                              ? 'transform -translate-x-1/2 left-1/2 min-w-[500px]'
+                              : 'transform -translate-x-1/2 left-1/2 min-w-0 w-max'
+                        } bg-white dark:bg-[#0D0D0D] border border-[#e8e8e8] dark:border-[#292929] shadow-[0px_10px_20px_rgba(0,0,0,0.05)] rounded-[16px] pt-[22px] pb-[22px] px-8 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-hover:mt-0`}>
+
 
                           <div className={`before:content-[''] before:block before:w-6 before:h-[15px] before:absolute before:top-0 ${key === 'products' ? 'before:left-[245px]' :
                               'before:left-1/2 before:-translate-x-1/2'
@@ -362,13 +363,13 @@ const Navbar: React.FC = () => {
                                     section.href ? (
                                       <a
                                         href={section.href}
-                                        className="text-[rgba(108,111,136,0.8)] dark:text-[#b7b7b7] text-[15px] font-medium leading-[126%] mb-[10px] min-h-5 px-2 transition-all duration-400 hover:text-[#0a0f39] dark:hover:text-white"
+                                        className="text-[rgba(108,111,136,0.8)] dark:text-[#b7b7b7] text-[15px] font-medium leading-[126%] mt-[10px] mb-[10px] min-h-5 transition-all duration-400 hover:text-[#0a0f39] dark:hover:text-white"
                                       >
                                         {section.title}
                                       </a>
                                     ) : (
                                       <div
-                                        className="text-[rgba(108,111,136,0.8)] dark:text-[#b7b7b7] text-[15px] font-medium leading-[126%] mb-[10px] min-h-5 px-2 transition-all duration-400"
+                                        className="text-[rgba(108,111,136,0.8)] dark:text-[#b7b7b7] text-[15px] font-medium leading-[126%] mt-[10px] mb-[10px] min-h-5 transition-all duration-400"
                                       >
                                         {section.title}
                                       </div>
@@ -376,13 +377,14 @@ const Navbar: React.FC = () => {
                                   )}
 
                                   {section.items.map((item) => (
-                                    <a
-                                      key={item.id}
-                                      id={item.id}
-                                      href={item.href}
-                                      target={item.target}
-                                      className="flex items-center gap-4 text-inherit p-[10px] rounded-[10px] transition-all duration-400 hover:bg-[#fafafa] dark:hover:bg-[#1e1e1e] hover:text-[#0a0f39] dark:hover:text-[#fafafa] min-h-[60px] grayscale transition-all duration-300 hover:grayscale-0"
-                                    >
+                                   <a
+                                        key={item.id}
+                                        id={item.id}
+                                        href={item.href}
+                                        target={item.target}
+                                        className="flex items-center gap-4 text-inherit p-[10px] rounded-[10px] transition-all duration-400 hover:bg-[#fafafa] dark:hover:bg-[#1e1e1e] hover:text-[#0a0f39] dark:hover:text-[#fafafa] min-h-[60px] grayscale transition-all duration-300 hover:grayscale-0 ml-[-10px]"
+                                      >
+
                                       {item.icon && (
                                         <>
                                           <Image
@@ -435,7 +437,16 @@ const Navbar: React.FC = () => {
                           </div>
                         </div>
                       </li>
+                      
                     ))}
+                    <li className="relative group">
+                        <a
+                          href="https://www.openzeppelin.com/stats"
+                          className="text-[15px] font-medium leading-[126%] tracking-[-0.01em] text-[#0a0f39] dark:text-[#fafafa] hover:text-[#4e5ee4] dark:hover:text-[#d1d1d1] transition-colors duration-300"
+                        >
+                          Stats
+                        </a>
+                      </li>
                   </ul>
                 </div>
 
@@ -681,6 +692,14 @@ const Navbar: React.FC = () => {
                         ))}
                       </div>
                     </ul>
+                  </li>
+                  <li className={`p-main-nav-item px-4 py-4 relative`}>
+                    <a
+                      href="https://www.openzeppelin.com/stats"
+                      className="block text-[16px] font-medium text-[#0a0f39] dark:text-[#fafafa]"
+                    >
+                      Stats
+                    </a>
                   </li>
                 </ul>
               </nav>
