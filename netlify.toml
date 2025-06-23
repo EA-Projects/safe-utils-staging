@@ -6,7 +6,3 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[[redirects]]
-  from = "/"
-  to = "/safe"
-  status = 301
